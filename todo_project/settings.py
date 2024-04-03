@@ -29,7 +29,7 @@ INSTALLED_APPS = [
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True  # Allows all origins
-CORS_ALLOW_CREDENTIALS = True  # Allows all origins
+CORS_ALLOW_CREDENTIALS = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -135,9 +135,6 @@ CORS_ALLOW_HEADERS = [
     'Content-Type',
     'Authorization',
 ]
-
-# Whether to include credentials (cookies, HTTP authentication) in CORS requests
-CORS_ALLOW_CREDENTIALS = True
 
 # Maximum age (in seconds) of a preflight request
 CORS_PREFLIGHT_MAX_AGE = 86400  # 24 hours
