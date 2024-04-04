@@ -31,6 +31,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'cloudinary',
+    'cloudinary_storage',
     'todos'
 ]
 
@@ -121,6 +123,13 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 MEDIA_URL = 'media/'
+
+# CONFIGURATION FOR CLOUDINARY STORAGE IMAGES
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': getenv('CLOUD_NAME'),
+    'API_KEY': getenv('API_KEY'),
+    'API_SECRET': getenv('API_SECRET'),
+}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
