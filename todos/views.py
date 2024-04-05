@@ -23,7 +23,7 @@ def Todos_api(request, pk=None):
         serializer = TodosSerializer(data=python_data)
         if serializer.is_valid():
             serializer.save()
-            return Response({"success": True, 'msg': 'Data Created Successfully !!!...', "data": serializer}, status=status.HTTP_201_CREATED)
+            return Response({"success": True, 'msg': 'Data Created Successfully !!!...', "data": serializer.data}, status=status.HTTP_201_CREATED)
         # Fixed typo here
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -33,7 +33,7 @@ def Todos_api(request, pk=None):
         serializer = TodosSerializer(todo, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
-            return Response({"success": True, 'msg': 'Complete Data Updated Successfully !!!...', "data": serializer}, status=status.HTTP_201_CREATED)
+            return Response({"success": True, 'msg': 'Complete Data Updated Successfully !!!...', "data": serializer.data}, status=status.HTTP_201_CREATED)
         # Fixed typo here
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -43,7 +43,7 @@ def Todos_api(request, pk=None):
         serializer = TodosSerializer(todo, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
-            return Response({"success": True, 'msg': 'Partial Data Updated Successfully !!!...', "data": serializer}, status=status.HTTP_201_CREATED)
+            return Response({"success": True, 'msg': 'Partial Data Updated Successfully !!!...', "data": serializer.data}, status=status.HTTP_201_CREATED)
         # Fixed typo here
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
