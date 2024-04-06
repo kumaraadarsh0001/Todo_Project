@@ -24,7 +24,6 @@ def Todos_api(request, pk=None):
         if serializer.is_valid():
             serializer.save()
             return Response({"success": True, 'msg': 'Data Created Successfully !!!...', "data": serializer.data}, status=status.HTTP_201_CREATED)
-        # Fixed typo here
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     if request.method == 'PUT':
@@ -34,7 +33,6 @@ def Todos_api(request, pk=None):
         if serializer.is_valid():
             serializer.save()
             return Response({"success": True, 'msg': 'Complete Data Updated Successfully !!!...', "data": serializer.data}, status=status.HTTP_201_CREATED)
-        # Fixed typo here
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     if request.method == 'PATCH':
@@ -44,7 +42,6 @@ def Todos_api(request, pk=None):
         if serializer.is_valid():
             serializer.save()
             return Response({"success": True, 'msg': 'Partial Data Updated Successfully !!!...', "data": serializer.data}, status=status.HTTP_201_CREATED)
-        # Fixed typo here
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     if request.method == 'DELETE':
