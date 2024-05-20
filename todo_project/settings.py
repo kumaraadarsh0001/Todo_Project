@@ -1,5 +1,4 @@
 import dj_database_url
-import dotenv
 import os
 from pathlib import Path
 from os import getenv
@@ -36,7 +35,7 @@ INSTALLED_APPS = [
     'todos'
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True  # Allows all origins
+CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 
 MIDDLEWARE = [
@@ -76,15 +75,10 @@ WSGI_APPLICATION = 'todo_project.wsgi.application'
 
 
 DATABASES = {
-
     "default": dj_database_url.parse(
-
         url=os.getenv("DATABASE_URL", ""),
-
         conn_max_age=600, conn_health_checks=True
-
     )
-
 }
 
 # Password validation
@@ -136,10 +130,6 @@ CLOUDINARY_STORAGE = {
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# CORS_ALLOWED_ORIGINS = [
-#     '*',
-# ]
-
 # Allow specific HTTP methods
 CORS_ALLOW_METHODS = [
     'GET',
@@ -147,7 +137,6 @@ CORS_ALLOW_METHODS = [
     'PUT',
     'PATCH',
     'DELETE',
-
 ]
 
 # Allow specific headers
