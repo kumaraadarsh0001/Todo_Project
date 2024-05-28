@@ -1,9 +1,6 @@
 import dj_database_url
 import os
 from pathlib import Path
-from os import getenv
-from dotenv import load_dotenv
-load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -13,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = getenv('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -118,11 +115,11 @@ USE_TZ = True
 STATIC_URL = 'static/'
 MEDIA_URL = 'media/'
 
-# CONFIGURATION FOR CLOUDINARY STORAGE IMAGES
+# # CONFIGURATION FOR CLOUDINARY STORAGE IMAGES
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': getenv('CLOUD_NAME'),
-    'API_KEY': getenv('API_KEY'),
-    'API_SECRET': getenv('API_SECRET'),
+    'CLOUD_NAME':os.environ.get('CLOUD_NAME'),
+    'API_KEY': os.environ.get('API_KEY'),
+    'API_SECRET': os.environ.get('API_SECRET'),
 }
 
 # Default primary key field type
